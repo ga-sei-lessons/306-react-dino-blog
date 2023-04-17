@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import Post from "./Post"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// export defualt and define a class on the same line
+export default class App extends Component {
+  render() {
+    // define some starter post data
+    const post = {
+      title: "Dinos are Cool",
+      author: "Stealth Stegosaurus",
+      body: "I like dinos, because they are neat.",
+      comments: ["🔥", "So brave 👏", "100% agree"]
+    }
+
+    return (
+      <div>
+        <h1>React Dino Blog 🦖</h1>
+
+        <Post 
+          title={post.title}
+          author={post.author}
+          body={post.body}
+          comments={post.comments}
+        />
+      </div>
+    )
+  }
 }
-
-export default App;
